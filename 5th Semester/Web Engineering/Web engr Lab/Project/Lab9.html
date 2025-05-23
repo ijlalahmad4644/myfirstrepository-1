@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f8ff;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            width: 60px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #message {
+            margin: 15px 0;
+            font-weight: bold;
+            min-height: 20px;
+        }
+        #attempts {
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Number</h1>
+        <p>I'm thinking of a number between 1 and 10.</p>
+        <p>Can you guess it in 3 tries?</p>
+        
+        <input type="number" id="guessInput" min="1" max="10">
+        <button id="guessButton">Guess</button>
+        
+        <div id="message"></div>
+        <div id="attempts">Attempts left: 3</div>
+    </div>
+
+    <script>
+        // Game variables
+        const secretNumber = Math.floor(Math.random() * 10) + 1;
+        let attemptsLeft = 3;
+        const guessButton = document.getElementById('guessButton');
+        const guessInput = document.getElementById('guessInput');
+        const messageDiv = document.getElementById('message');
+        const attemptsDiv = document.getElementById('attempts');
+
+        // Main game function
+        function checkGuess() {
+            const userGuess = parseInt(guessInput.value);
+            
+            // Validate input
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+                messageDiv.textContent = "Please enter a number between 1 and 10!";
+                return;
+            }
+            
+            // Decrease attempts
+            attemptsLeft--;
+            attemptsDiv.textContent = `Attempts left: ${attemptsLeft}`;
+            
+            // Check guess using switch
+            switch(true) {
+                case userGuess === secretNumber:
+                    messageDiv.textContent = "Congratulations! You guessed it!";
+                    endGame();
+                    break;
+                case attemptsLeft === 0:
+                    messageDiv.textContent = `Game over! The number was ${secretNumber}.`;
+                    endGame();
+                    break;
+                case userGuess < secretNumber:
+                    messageDiv.textContent = "Too low! Try again.";
+                    break;
+                case userGuess > secretNumber:
+                    messageDiv.textContent = "Too high! Try again.";
+                    break;
+            }
+            
+            guessInput.value = '';
+        }
+
+        // End game function
+        function endGame() {
+            guessInput.disabled = true;
+            guessButton.disabled = true;
+            
+            // Add restart button
+            const restartButton = document.createElement('button');
+            restartButton.textContent = 'Play Again';
+            restartButton.style.marginTop = '10px';
+            restartButton.onclick = function() {
+                window.location.reload();
+            };
+            document.querySelector('.container').appendChild(restartButton);
+        }
+
+        // Event listener for guess button
+        guessButton.addEventListener('click', checkGuess);
+        
+        // Event listener for Enter key
+        guessInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkGuess();
+            }
+        });
+    </script>
+</body>
+</html>

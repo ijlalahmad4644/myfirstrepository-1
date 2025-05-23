@@ -1,0 +1,65 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Border Styles</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+        .dotted { border: 2px dotted black; }
+        .dashed { border: 2px dashed black; }
+        .solid { border: 2px solid black; }
+        .double { border: 4px double black; }
+        .groove { border: 4px groove black; }
+        .ridge { border: 4px ridge black; }
+        .inset { border: 4px inset black; }
+        .outset { border: 4px outset black; }
+        .none { border: none; }
+        .hidden { border: hidden; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Table Border Styles</h2>
+    <table border="1">
+        <tr>
+            <th class="dotted">Dotted</th>
+            <th class="dashed">Dashed</th>
+            <th class="solid">Solid</th>
+            <th class="double">Double</th>
+        </tr>
+        <tr>
+            <td class="groove">Groove</td>
+            <td class="ridge">Ridge</td>
+            <td class="inset">Inset</td>
+            <td class="outset">Outset</td>
+        </tr>
+        <tr>
+            <td class="none">None</td>
+            <td class="hidden">Hidden</td>
+            <td class="solid">Solid</td>
+            <td class="double">Double</td>
+        </tr>
+    </table>
+    <h3>Explanation of Border Styles:</h3>
+    <ul>
+        <li><b>Dotted:</b> A border consisting of small dots.</li>
+        <li><b>Dashed:</b> A border made up of short dashes.</li>
+        <li><b>Solid:</b> A single, unbroken line.</li>
+        <li><b>Double:</b> Two solid lines with space in between.</li>
+        <li><b>Groove:</b> A 3D-styled border that appears carved.</li>
+        <li><b>Ridge:</b> A 3D-styled border that looks raised.</li>
+        <li><b>Inset:</b> Makes the element appear embedded into the page.</li>
+        <li><b>Outset:</b> Gives the element a raised appearance.</li>
+        <li><b>None:</b> No border is displayed.</li>
+        <li><b>Hidden:</b> Similar to 'none' but may affect table layout in certain cases.</li>
+    </ul>
+</body>
+</html>

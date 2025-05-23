@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Motors - Inventory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Premium Motors</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="cars.html">Cars</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero inventory-hero">
+      <div class="hero-content">
+        <h1>Our Premium Collection</h1>
+        <p>Explore our curated selection of luxury vehicles</p>
+      </div>
+    </section>
+
+    <section class="featured-cars">
+      <div class="filter-section">
+        <select id="price-filter">
+          <option value="all">Price Range</option>
+          <option value="0-50000">$0 - $50,000</option>
+          <option value="50000-100000">$50,000 - $100,000</option>
+          <option value="100000+">$100,000+</option>
+        </select>
+        <select id="type-filter">
+          <option value="all">Vehicle Type</option>
+          <option value="suv">SUV</option>
+          <option value="sedan">Sedan</option>
+          <option value="sports">Sports</option>
+        </select>
+      </div>
+
+      <div class="grid">
+        <!-- BMW Card -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1555215695-3004980ad54e"
+            alt="BMW 7 Series"
+          />
+          <div class="card-content">
+            <h3>2024 BMW 7 Series</h3>
+            <div class="car-specs">
+              <p><strong>Price:</strong> $94,300</p>
+              <p><strong>Mileage:</strong> 15,000 mi</p>
+              <p><strong>Engine:</strong> 3.0L Turbo I6</p>
+            </div>
+            <button class="btn">Schedule Test Drive</button>
+          </div>
+        </div>
+
+        <!-- Mercedes-Benz Card -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1553440569-bcc63803a83d"
+            alt="Mercedes S-Class"
+          />
+          <div class="card-content">
+            <h3>2024 Mercedes-Benz S-Class</h3>
+            <div class="car-specs">
+              <p><strong>Price:</strong> $118,450</p>
+              <p><strong>Mileage:</strong> 8,500 mi</p>
+              <p><strong>Engine:</strong> 4.0L V8 Biturbo</p>
+            </div>
+            <button class="btn">Schedule Test Drive</button>
+          </div>
+        </div>
+        
+        <!-- Porsche Card -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1583121274602-3e2820c69888"
+            alt="Porsche 911"
+          />
+          <div class="card-content">
+            <h3>2024 Porsche 911 Turbo S</h3>
+            <div class="car-specs">
+              <p><strong>Price:</strong> $215,000</p>
+              <p><strong>Mileage:</strong> 3,200 mi</p>
+              <p><strong>Engine:</strong> 3.8L Twin-Turbo H6</p>
+            </div>
+            <button class="btn">Schedule Test Drive</button>
+          </div>
+        </div>
+
+        <!-- Ferrari Card -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8"
+            alt="Ferrari Roma"
+          />
+          <div class="card-content">
+            <h3>2024 Ferrari Roma</h3>
+            <div class="car-specs">
+              <p><strong>Price:</strong> $247,000</p>
+              <p><strong>Mileage:</strong> 1,500 mi</p>
+              <p><strong>Engine:</strong> 3.9L Twin-Turbo V8</p>
+            </div>
+            <button class="btn">Schedule Test Drive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>123 Premium Avenue</p>
+          <p>contact@premiummotors.com</p>
+          <p>(555) 123-4567</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <!-- Add social media links -->
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
